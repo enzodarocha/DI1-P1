@@ -1,0 +1,16 @@
+# Utilise l'image officielle de PostgreSQL version 16.3
+FROM postgres:16.3
+ 
+# Définit les variables d'environnement pour initialiser la base de données
+ENV POSTGRES_DB=wss_dev
+ENV POSTGRES_USER=wss
+ENV POSTGRES_PASSWORD=WSS
+ 
+# Crée un volume pour persister les données
+VOLUME /var/lib/postgresql/data
+ 
+# Expose le port PostgreSQL par défaut
+EXPOSE 5432
+ 
+# Commande par défaut pour démarrer PostgreSQL
+CMD ["postgres"]
